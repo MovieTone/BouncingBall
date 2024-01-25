@@ -20,8 +20,8 @@ public class ControlPanel extends JPanel {
 	private JScrollBar scrollBarWidth;
 	private JScrollBar scrollBarHeight;
 
-	private static final String X_INCREMENT = "X Increment: ";
-	private static final String Y_INCREMENT = "Y Increment: ";
+	private static final String X_SPEED = "X Speed: ";
+	private static final String Y_SPEED = "Y Speed: ";
 	private static final String WIDTH_SIZE = "Width size: ";
 	private static final String HEIGHT_SIZE = "Height size: ";
 
@@ -47,18 +47,18 @@ public class ControlPanel extends JPanel {
 		setLayout(null);
 		setBounds(392, 11, 189, 393);
 
-		txtPaneXSpeed = addTextPane(X_INCREMENT + X_INITIAL_VALUE, TXT_PANE_X, 51,
+		txtPaneXSpeed = addTextPane(X_SPEED + X_INITIAL_VALUE, TXT_PANE_X, 51,
 				TXT_PANE_WIDTH, TXT_PANE_HEIGHT);
-		txtPaneYSpeed = addTextPane(Y_INCREMENT + Y_INITIAL_VALUE, TXT_PANE_X, 145,
+		txtPaneYSpeed = addTextPane(Y_SPEED + Y_INITIAL_VALUE, TXT_PANE_X, 145,
 				TXT_PANE_WIDTH, TXT_PANE_HEIGHT);
 		txtPaneWidth = addTextPane(WIDTH_SIZE + WIDTH_INITIAL_VALUE, TXT_PANE_X, 239,
 				TXT_PANE_WIDTH, TXT_PANE_HEIGHT);
 		txtPaneHeight = addTextPane(HEIGHT_SIZE + HEIGHT_INITIAL_VALUE, TXT_PANE_X, 326,
 				TXT_PANE_WIDTH, TXT_PANE_HEIGHT);
 
-		scrollBarXSpeed = addScrollBar(X_INITIAL_VALUE, X_INCREMENT, txtPaneXSpeed, SCROLL_BAR_MIN_VALUE,
+		scrollBarXSpeed = addScrollBar(X_INITIAL_VALUE, X_SPEED, txtPaneXSpeed, SCROLL_BAR_MIN_VALUE,
 				SPEED_MAX_VALUE, SCROLL_BAR_X, 23, SCROLL_BAR_WIDTH, SCROLL_BAR_HEIGHT);
-		scrollBarYSpeed = addScrollBar(Y_INITIAL_VALUE, Y_INCREMENT, txtPaneYSpeed, SCROLL_BAR_MIN_VALUE,
+		scrollBarYSpeed = addScrollBar(Y_INITIAL_VALUE, Y_SPEED, txtPaneYSpeed, SCROLL_BAR_MIN_VALUE,
 				SPEED_MAX_VALUE, SCROLL_BAR_X, 117, SCROLL_BAR_WIDTH, SCROLL_BAR_HEIGHT);
 		scrollBarWidth = addScrollBar(WIDTH_INITIAL_VALUE, WIDTH_SIZE, txtPaneWidth, SCROLL_BAR_MIN_VALUE,
 				WIDTH_HEIGHT_MAX_VALUE, SCROLL_BAR_X, 211, SCROLL_BAR_WIDTH, SCROLL_BAR_HEIGHT);
@@ -75,8 +75,8 @@ public class ControlPanel extends JPanel {
 				int value = adjustmentEvent.getValue();
 
 				switch (text) {
-				case X_INCREMENT -> paintPanel.setXChange(value);
-				case Y_INCREMENT -> paintPanel.setYChange(value);
+				case X_SPEED -> paintPanel.setXChange(value);
+				case Y_SPEED -> paintPanel.setYChange(value);
 				case WIDTH_SIZE -> paintPanel.setRWidth(value);
 				case HEIGHT_SIZE -> paintPanel.setRHeight(value);
 				}
